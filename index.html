@@ -1,142 +1,195 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Система привлечения клиентов | Вебинар Евгения Стадника</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        /* Плавная прокрутка */
-        html { scroll-behavior: smooth; }
+        /* Паттерн для фона (сетка) */
+        .bg-grid-slate {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249 / 0.6)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+        }
+        /* Паттерн из точек */
+        .bg-dots {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2394a3b8' fill-opacity='0.2' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body class="bg-white text-slate-800 antialiased">
 
-    <header class="relative pt-20 pb-24 lg:pt-32 lg:pb-40 overflow-hidden">
+    <header class="relative pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-grid-slate mask-gradient-b z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white pointer-events-none z-0"></div>
+
         <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6">
+            <span class="inline-flex items-center py-1.5 px-4 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-wide mb-8 shadow-sm">
+                <span class="flex h-2 w-2 relative mr-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  </span>
                 Бесплатный вебинар
             </span>
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 text-slate-900">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-slate-900 drop-shadow-sm">
                 Почему у вас нет клиентов, хотя вы делаете «всё правильно»
             </h1>
-            <p class="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-                За 90 минут вы увидите систему, которая превращает хаотичные действия в стабильный поток заявок.
+            <p class="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed max-w-3xl mx-auto font-light">
+                За 90 минут вы увидите систему, которая превращает хаотичные действия в <span class="font-semibold text-blue-700">стабильный поток заявок</span>.
             </p>
             
-            <div class="inline-flex items-center justify-center space-x-2 bg-slate-100 px-4 py-2 rounded-lg mb-8 text-slate-700 font-medium">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                <span>24 Октября, 19:00 (Киев/Мск)</span>
+            <div class="inline-flex items-center justify-center space-x-3 bg-white border border-slate-200 px-6 py-3 rounded-xl mb-10 text-slate-700 font-medium shadow-sm">
+                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span class="text-lg">24 Октября, 19:00 (Киев/Мск)</span>
             </div>
 
             <div>
-                <a href="#telegram-bot-link" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-4 px-10 rounded-lg transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                    Хочу разобраться →
+                <a href="#telegram-bot-link" class="group inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-4 px-12 rounded-xl transition duration-300 shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1">
+                    Хочу разобраться
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
-                <p class="mt-4 text-sm text-slate-400">Регистрация через Telegram-бот</p>
+                <p class="mt-4 text-sm text-slate-500 font-medium flex justify-center items-center">
+                    <svg class="w-4 h-4 mr-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Мгновенная регистрация через Telegram
+                </p>
             </div>
         </div>
     </header>
 
-    <section class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Знакомо?</h2>
+    <section class="py-24 bg-slate-50 relative">
+         <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-slate-50"></div>
+
+        <div class="container mx-auto px-6 max-w-5xl relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block relative">
+                    Знакомо?
+                    <div class="absolute -bottom-2 left-0 w-full h-1 bg-red-300 rounded opacity-50"></div>
+                </h2>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                    <div class="text-red-500 text-xl mb-2">✕</div>
-                    <p class="font-medium">Ведёте соцсети, пишете посты — но в личку никто не пишет.</p>
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start hover:shadow-md transition">
+                    <div class="bg-red-100 text-red-500 p-2 rounded-full mr-4 flex-shrink-0 mt-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </div>
+                    <p class="font-medium text-lg text-slate-700 leading-snug">Ведёте соцсети, пишете посты — но в личку никто не пишет.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                    <div class="text-red-500 text-xl mb-2">✕</div>
-                    <p class="font-medium">Пробовали рекламу, воронки, рассылки — потратили деньги, результата нет.</p>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start hover:shadow-md transition">
+                    <div class="bg-red-100 text-red-500 p-2 rounded-full mr-4 flex-shrink-0 mt-1">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </div>
+                    <p class="font-medium text-lg text-slate-700 leading-snug">Пробовали рекламу, воронки — потратили деньги, результата нет.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                    <div class="text-red-500 text-xl mb-2">✕</div>
-                    <p class="font-medium">Смотрите на других и не понимаете: они делают то же самое, но у них покупают.</p>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start hover:shadow-md transition">
+                   <div class="bg-red-100 text-red-500 p-2 rounded-full mr-4 flex-shrink-0 mt-1">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </div>
+                    <p class="font-medium text-lg text-slate-700 leading-snug">Смотрите на других и не понимаете: они делают то же самое, но у них покупают.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                    <div class="text-red-500 text-xl mb-2">✕</div>
-                    <p class="font-medium">Устали от советов «просто делай контент» и «будь экспертом».</p>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start hover:shadow-md transition">
+                    <div class="bg-red-100 text-red-500 p-2 rounded-full mr-4 flex-shrink-0 mt-1">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </div>
+                    <p class="font-medium text-lg text-slate-700 leading-snug">Устали от советов «просто делай контент» и «будь экспертом».</p>
                 </div>
             </div>
 
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                <p class="text-lg text-slate-700">
-                    <span class="font-bold">Проблема не в том, что вы мало работаете.</span> И не в том, что у вас плохой продукт.
-                    Проблема в том, что у вас нет системы. Есть отдельные кусочки — но они не соединены между собой.
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-8 rounded-2xl shadow-lg text-white relative overflow-hidden">
+                <div class="absolute right-0 top-0 opacity-10 transform translate-x-1/3 -translate-y-1/3">
+                    <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor"><path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"/></svg>
+                </div>
+                <p class="text-xl md:text-2xl font-light relative z-10">
+                    <span class="font-bold block mb-2 text-blue-100">Проблема не в том, что вы мало работаете.</span>
+                    И не в том, что у вас плохой продукт. Проблема в том, что <span class="underline decoration-blue-400 decoration-4">у вас нет системы</span>. Есть отдельные кусочки, но они не соединены.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Что вы получите за 90 минут</h2>
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-20">Что вы получите за 90 минут</h2>
             
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="relative">
-                    <div class="text-6xl text-slate-100 font-bold absolute -top-10 -left-4 z-0">01</div>
+            <div class="grid md:grid-cols-3 gap-12 relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 -translate-y-1/2 z-0"></div>
+
+                <div class="relative z-10 bg-white p-8 rounded-3xl border-2 border-slate-50 shadow-xl shadow-slate-200/50 text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="text-8xl text-blue-50 font-black absolute -top-12 right-4 z-0 select-none group-hover:text-blue-100 transition">01</div>
                     <div class="relative z-10">
-                        <h3 class="text-xl font-bold mb-3">Полную схему пути клиента</h3>
-                        <p class="text-slate-600">От момента, когда человек впервые о вас узнал — до момента оплаты. Пять этапов, которые должны быть у каждого. Без воды и мотивации.</p>
+                        <div class="bg-blue-600 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 mx-auto shadow-lg shadow-blue-500/30">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 7m0 13V7m0 0L9 4"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Полную схему пути клиента</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed">От момента, когда человек впервые о вас узнал — до момента оплаты. Пять этапов, которые должны быть у каждого.</p>
                     </div>
                 </div>
-                 <div class="relative">
-                    <div class="text-6xl text-slate-100 font-bold absolute -top-10 -left-4 z-0">02</div>
+                 <div class="relative z-10 bg-white p-8 rounded-3xl border-2 border-slate-50 shadow-xl shadow-slate-200/50 text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="text-8xl text-blue-50 font-black absolute -top-12 right-4 z-0 select-none group-hover:text-blue-100 transition">02</div>
                     <div class="relative z-10">
-                        <h3 class="text-xl font-bold mb-3">Понимание, где у вас дыра</h3>
-                        <p class="text-slate-600">Вы увидите, какой этап у вас провален. Почему действия не приносят результата и что нужно починить в первую очередь.</p>
+                        <div class="bg-blue-600 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 mx-auto shadow-lg shadow-blue-500/30">
+                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Понимание, где у вас дыра</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed">Вы увидите, какой этап у вас провален. Почему действия не приносят результата и что нужно починить в первую очередь.</p>
                     </div>
                 </div>
-                 <div class="relative">
-                    <div class="text-6xl text-slate-100 font-bold absolute -top-10 -left-4 z-0">03</div>
+                 <div class="relative z-10 bg-white p-8 rounded-3xl border-2 border-slate-50 shadow-xl shadow-slate-200/50 text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="text-8xl text-blue-50 font-black absolute -top-12 right-4 z-0 select-none group-hover:text-blue-100 transition">03</div>
                     <div class="relative z-10">
-                        <h3 class="text-xl font-bold mb-3">Конкретные инструменты</h3>
-                        <p class="text-slate-600">Что работает на привлечение, что — на прогрев, что — на продажу. Какие цифры смотреть и какие ошибки совершают все.</p>
+                        <div class="bg-blue-600 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 mx-auto shadow-lg shadow-blue-500/30">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Конкретные инструменты</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed">Что работает на привлечение, прогрев и продажу. Какие цифры смотреть и какие ошибки совершают все.</p>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-16">
-                <a href="#telegram-bot-link" class="inline-block bg-slate-900 hover:bg-slate-800 text-white text-lg font-semibold py-4 px-10 rounded-lg transition duration-300">
-                    Зарегистрироваться бесплатно →
+                <a href="#telegram-bot-link" class="inline-flex items-center bg-slate-900 hover:bg-slate-800 text-white text-xl font-bold py-5 px-12 rounded-xl transition duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    Зарегистрироваться бесплатно
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/3">
-                    <div class="aspect-[3/4] bg-slate-300 rounded-xl overflow-hidden relative shadow-lg flex items-center justify-center">
+    <section class="py-24 bg-slate-50 overflow-hidden">
+        <div class="container mx-auto px-6 max-w-5xl relative">
+             <div class="absolute top-10 left-0 w-64 h-64 bg-dots opacity-50 hidden md:block"></div>
+
+            <div class="flex flex-col md:flex-row items-center gap-16 relative z-10">
+                <div class="w-full md:w-2/5 relative">
+                    <div class="absolute inset-0 bg-blue-200 rounded-3xl transform translate-x-4 translate-y-4"></div>
+                    <div class="aspect-[3/4] bg-slate-200 rounded-3xl overflow-hidden relative shadow-2xl flex items-center justify-center border-4 border-white">
                         <img src="https://via.placeholder.com/400x533/cbd5e1/64748b?text=PHOTO" alt="Евгений Стадник" class="object-cover w-full h-full absolute inset-0">
-                        <span class="relative z-10 text-slate-500 font-semibold">Фото Евгения</span>
                     </div>
                 </div>
                 
-                <div class="w-full md:w-2/3">
-                    <span class="text-blue-600 font-bold tracking-wide uppercase text-sm">Кто ведёт</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-6">Евгений Стадник</h2>
+                <div class="w-full md:w-3/5">
+                    <span class="inline-block text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 bg-blue-100 py-1 px-3 rounded">Кто ведёт</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mt-2 mb-8 text-slate-900">Евгений Стадник</h2>
                     
-                    <div class="space-y-4 text-lg text-slate-700">
-                        <p>
-                            <span class="font-bold">20+ лет опыта в IT.</span> Последние 10 лет занимается исключительно созданием систем привлечения клиентов.
+                    <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+                        <p class="text-xl">
+                            <span class="font-bold text-slate-900 bg-blue-50 px-1 rounded">20+ лет опыта в IT.</span> Последние 10 лет занимается исключительно созданием систем привлечения клиентов.
                         </p>
-                        <ul class="space-y-3 mt-4 mb-6">
+                        <ul class="space-y-4 mt-6 mb-8">
                             <li class="flex items-start">
-                                <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>Управлял рекламным бюджетом около <span class="font-bold">10 млн гривен</span></span>
+                                <div class="bg-green-100 text-green-600 rounded-full p-1 mr-3 mt-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <span>Управлял рекламным бюджетом около <span class="font-bold text-slate-900">10 млн гривен</span></span>
                             </li>
                             <li class="flex items-start">
-                                <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>Сгенерировал подтвержденных продаж на сумму более <span class="font-bold">120 млн гривен</span></span>
+                                <div class="bg-green-100 text-green-600 rounded-full p-1 mr-3 mt-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <span>Сгенерировал подтвержденных продаж на сумму более <span class="font-bold text-slate-900">120 млн гривен</span></span>
                             </li>
                         </ul>
-                        <p class="italic text-slate-500 border-l-4 border-slate-300 pl-4">
+                        <p class="italic text-slate-600 border-l-4 border-blue-500 pl-6 py-2 bg-white shadow-sm rounded-r-lg">
                             «Это не мотивационный вебинар. Не продажа "успешного успеха". Только конкретная схема, которую можно применить сразу.»
                         </p>
                     </div>
@@ -145,70 +198,82 @@
         </div>
     </section>
 
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Вам точно стоит быть, если вы:</h2>
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full opacity-50 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-slate-50 rounded-full opacity-50 blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">Вам точно стоит быть, если вы:</h2>
             
-            <div class="space-y-6">
-                <div class="flex items-start p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
-                    <div class="bg-blue-100 text-blue-600 p-3 rounded-lg mr-5 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <div class="space-y-8">
+                <div class="flex items-start p-8 rounded-2xl bg-white border-2 border-slate-100 shadow-lg shadow-slate-100/50 hover:border-blue-200 hover:shadow-blue-100 transition duration-300 group">
+                    <div class="bg-blue-100 text-blue-600 p-4 rounded-2xl mr-6 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold mb-2">Эксперт, коуч, консультант</h4>
-                        <p class="text-slate-600">У вас есть знания и опыт, но нет понятной системы стабильного привлечения клиентов.</p>
+                        <h4 class="text-2xl font-bold mb-3 text-slate-900">Эксперт, коуч, консультант</h4>
+                        <p class="text-slate-600 text-lg leading-relaxed">У вас есть знания и опыт, но нет понятной системы стабильного привлечения клиентов.</p>
                     </div>
                 </div>
-                 <div class="flex items-start p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
-                    <div class="bg-blue-100 text-blue-600 p-3 rounded-lg mr-5 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                 <div class="flex items-start p-8 rounded-2xl bg-white border-2 border-slate-100 shadow-lg shadow-slate-100/50 hover:border-blue-200 hover:shadow-blue-100 transition duration-300 group">
+                    <div class="bg-blue-100 text-blue-600 p-4 rounded-2xl mr-6 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold mb-2">Фрилансер или специалист</h4>
-                        <p class="text-slate-600">Вы хорошо делаете свою работу, но клиенты приходят хаотично, от случая к случаю.</p>
+                        <h4 class="text-2xl font-bold mb-3 text-slate-900">Фрилансер или специалист</h4>
+                        <p class="text-slate-600 text-lg leading-relaxed">Вы хорошо делаете свою работу, но клиенты приходят хаотично, от случая к случаю.</p>
                     </div>
                 </div>
-                 <div class="flex items-start p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
-                    <div class="bg-blue-100 text-blue-600 p-3 rounded-lg mr-5 flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                 <div class="flex items-start p-8 rounded-2xl bg-white border-2 border-slate-100 shadow-lg shadow-slate-100/50 hover:border-blue-200 hover:shadow-blue-100 transition duration-300 group">
+                    <div class="bg-blue-100 text-blue-600 p-4 rounded-2xl mr-6 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold mb-2">Начинающий предприниматель</h4>
-                        <p class="text-slate-600">Вы запускаете продукт и хотите сразу сделать правильно, без месяцев проб и ошибок.</p>
+                        <h4 class="text-2xl font-bold mb-3 text-slate-900">Начинающий предприниматель</h4>
+                        <p class="text-slate-600 text-lg leading-relaxed">Вы запускаете продукт и хотите сразу сделать правильно, без месяцев проб и ошибок.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-900 text-white text-center">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">Перестаньте делать хаотичные действия</h2>
-            <p class="text-xl text-slate-300 mb-10">
+    <section class="py-28 bg-slate-900 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-dots opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900 pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 max-w-3xl relative z-10">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">Перестаньте делать хаотичные действия</h2>
+            <p class="text-xl md:text-2xl text-slate-300 mb-12 font-light leading-relaxed">
                 За 90 минут вы получите ясную схему: что должно быть на каждом этапе, чтобы люди приходили и покупали.
             </p>
             
-            <div class="flex flex-col items-center gap-4">
-                <a href="#telegram-bot-link" class="bg-blue-600 hover:bg-blue-500 text-white text-xl font-bold py-5 px-12 rounded-lg transition duration-300 shadow-lg transform hover:scale-105">
-                    Занять место →
+            <div class="flex flex-col items-center gap-6">
+                <a href="#telegram-bot-link" class="group bg-blue-600 hover:bg-blue-500 text-white text-xl font-bold py-6 px-16 rounded-2xl transition duration-300 shadow-2xl shadow-blue-900/50 transform hover:scale-105 flex items-center">
+                    Занять место
+                    <svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
-                <p class="text-sm text-slate-500 mt-4">
+                <p class="text-slate-400 font-medium flex items-center bg-slate-800/50 px-4 py-2 rounded-full">
+                    <svg class="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     После регистрации пришлём напоминание и ссылку на эфир
                 </p>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-950 text-slate-500 py-10 border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center text-sm">
-            <p class="mb-4">&copy; Евгений Стадник, 2026</p>
-            
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="hover:text-slate-300 transition">Политика конфиденциальности</a>
-                <a href="#" class="hover:text-slate-300 transition">Публичная оферта</a>
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <span class="text-2xl font-bold text-white">Евгений Стадник</span>
             </div>
             
-            <p class="mt-8 text-xs text-slate-700">Евгений Омега 20-26</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mb-8 text-sm font-medium">
+                <a href="#" class="hover:text-white transition duration-300">Политика конфиденциальности</a>
+                <a href="#" class="hover:text-white transition duration-300">Публичная оферта</a>
+            </div>
+
+             <p class="mb-4 text-slate-500">&copy; 2026 Все права защищены.</p>
+            
+            <p class="mt-6 text-xs text-slate-600 uppercase tracking-widest">Евгений Омега 20-26</p>
         </div>
     </footer>
 
